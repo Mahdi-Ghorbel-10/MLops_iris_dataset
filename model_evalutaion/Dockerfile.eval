@@ -1,4 +1,4 @@
-# Dockerfile.train
+# Dockerfile.eval
 FROM python:3.8-slim
 
 WORKDIR /app
@@ -6,6 +6,6 @@ WORKDIR /app
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY model_training.py ./
+COPY model_evaluation.py ./
 
-CMD ["python", "model_training.py"]
+CMD ["python", "model_evaluation.py"]

@@ -1,0 +1,14 @@
+# Dockerfile.ingest
+FROM python:3.8-slim
+
+WORKDIR /app
+
+# Copy the requirements and install dependencies
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the ingestion script
+COPY data_ingest_preprocess.py ./
+
+# Run the script
+CMD ["python", "data_ingest_preprocess.py"]

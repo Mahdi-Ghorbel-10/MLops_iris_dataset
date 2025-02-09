@@ -7,7 +7,6 @@ def main():
     # Load the Iris dataset as a DataFrame
     iris = load_iris(as_frame=True)
     data = iris.frame
-
     # Optional preprocessing: rename the target column for clarity
     data.rename(columns={'target': 'label'}, inplace=True)
 

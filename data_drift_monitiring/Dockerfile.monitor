@@ -1,4 +1,4 @@
-# Dockerfile.train
+# Dockerfile.monitor
 FROM python:3.8-slim
 
 WORKDIR /app
@@ -6,6 +6,6 @@ WORKDIR /app
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY model_training.py ./
+COPY data_drift_monitor.py ./
 
-CMD ["python", "model_training.py"]
+CMD ["python", "data_drift_monitor.py"]
